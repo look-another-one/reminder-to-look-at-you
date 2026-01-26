@@ -13,3 +13,7 @@ Goal:
 
 Languages: 
 Main Launaguage is going to be python.
+
+
+Scope: 
+This is Linux First but maybe after a stable release we work in windows and mac version.
