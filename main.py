@@ -9,11 +9,12 @@ project_root = Path(__file__).parent  # give the location of folder
 
 alert_icon = project_root / "assets" / "alert.png"
 water_bottle = project_root / "assets" / "water_bottle.png"
+json_file = project_root /"log" /"data.jsonl"
 notifier = DesktopNotifier()
 
 
 def writing_log(taken:bool):
-    with open("./log/data.jsonl","a") as data:
+    with open(json_file,"a") as data:
         json.dump({"Date": ctime(), "Reminder": "Drink Water","Taken":taken},data)
         data.write("\n")
 # This Func gonna send a notification based on paramaters
