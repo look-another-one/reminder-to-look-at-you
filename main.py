@@ -12,13 +12,10 @@ water_bottle = project_root / "assets" / "water_bottle.png"
 notifier = DesktopNotifier()
 
 
-def writing_log(taken: bool):
-    with open("./log/data.json", "a") as data:
-        json.dump(
-            {"Date": ctime(), "Reminder": "Drink Water", "Taken": taken}, data, indent=4
-        )
-
-
+def writing_log(taken:bool):
+    with open("./log/data.jsonl","a") as data:
+        json.dump({"Date": ctime(), "Reminder": "Drink Water","Taken":taken},data)
+        data.write("\n")
 # This Func gonna send a notification based on paramaters
 async def send(title: str, message: str, icon: Path):
     while True:
@@ -35,8 +32,10 @@ async def send(title: str, message: str, icon: Path):
 
 
 # print(project_root)
+print(ctime())
 
 if __name__ == "__main__":
     asyncio.run(
         send("There is Still Water in this world!", "Drink Water Sir!", water_bottle)
     )
+
