@@ -3,6 +3,7 @@ from desktop_notifier import DesktopNotifier, Icon, Button
 from pathlib import Path
 from time import ctime
 import json
+import os
 
 
 project_root = Path(__file__).parent  # give the location of folder
@@ -14,9 +15,12 @@ notifier = DesktopNotifier()
 
 
 def writing_log(status:str):
-    with open(json_file,"a") as data:
-        json.dump({"Date": ctime(), "Reminder": "Drink Water","Status":status},data)
-        data.write("\n")
+    try:
+        with open(json_file,"a+") as data:
+            json.dump({"Date": ctime(), "Reminder": "Drink Water","Status":status},data)
+            data.write("\n")
+    except: #if log directory does not exsit it gonna create one 
+        os.mkdir("log") 
 
 # This Func gonna send a notification based on paramaters
 async def send(title: str, message: str, icon: Path, reminder_interval: int, snooze_interval: int):
