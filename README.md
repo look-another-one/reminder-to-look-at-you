@@ -19,7 +19,7 @@ Scope:
 This is Linux First but maybe after a stable release we work in windows and mac version.
 
 > [!WARNING]
-> This Project is currently in beta state and there is not installation script it available Righnow
+> This Project is currently in beta state
 
 ---
 
