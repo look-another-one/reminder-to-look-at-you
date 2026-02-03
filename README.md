@@ -25,4 +25,5 @@ This is Linux First but maybe after a stable release we work in windows and mac 
 
 Developer Todos: 
 
-1. 
+1. adding limit of a app for a day
+2. track the apps usage 
