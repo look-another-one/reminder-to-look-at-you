@@ -22,15 +22,15 @@ except:
     print("subprocces failed!")
 
 # ---------- Notification Manager --------
-print("Notification Manager")
+print("---------Notification Manager---------")
 try:
     subprocess.run(['pgrep','-lfa','"dunst|xfce4-notifyd|gnome-shell|kdeinit|notification-daemon|mutter|swaync|mako"'])
 except:
     print("notification manager check failed..")
 
 # --------- Display Manager ------- 
-print("Display Manager")
+print("----------Display Manager-------- ")
 try: 
-    subprocess.run(["echo","$XDG_CURRENT_DESKTOP"])
+    subprocess.run("echo $XDG_CURRENT_DESKTOP",shell=True)
 except:
     print("Display Manager check failed... ")
