@@ -22,6 +22,13 @@ This is Linux First but maybe after a stable release we work in windows and mac 
 > This Project is currently in beta state
 
 ---
+**Automatic Installation:**
+Run these commands seperately or combined for an automatic installation : 
+```
+curl -o install.sh https://raw.githubusercontent.com/look-another-one/reminder-to-look-at-you/refs/heads/main/install.sh
+chmod +x install.sh
+./install.sh
+```
 
 Developer Todos: 
 
