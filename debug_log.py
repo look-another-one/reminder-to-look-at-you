@@ -1,5 +1,4 @@
 import platform
-import pip
 import subprocess
 import os
 # get system informations
@@ -14,7 +13,6 @@ print(platform._node())
 print("---------- Python --------------")
 print(platform.python_version())
 print(platform.python_compiler())
-print(pip.__version__)
 
 # ------------ OS -----------------
 print("------------------ OS ------------------")
