@@ -33,4 +33,8 @@ chmod +x install.sh
 Developer Todos: 
 
 1. adding limit of a app for a day
-2. track the apps usage 
+2. track the apps usage
+
+
+thoughts: 
+what about adding plugin system. 
