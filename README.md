@@ -16,7 +16,7 @@ Main Launaguage is going to be python.
 
 
 Scope: 
-This is Linux First but maybe after a stable release we work in windows and mac version.
+This is Linux First but maybe after a stable release we work in **Windows**( Beta testing for windows published. refer to the installation guider.) and **Mac** version.
 
 > [!WARNING]
 > This Project is currently in beta state
@@ -30,8 +30,20 @@ curl -o install.sh https://raw.githubusercontent.com/look-another-one/reminder-t
 chmod +x install.sh
 ./install.sh
 ```
+**Windows Installation:** For quick and easy installation run these commands in your cmd : 
+```
+git clone https://github.com/look-another-one/reminder-to-look-at-you.git
+cd reminder-to-look-at-you
+pip install desktop_notifier
+python main.py
+```
+For a more simple installation refer to the .bat file install script: 
+```
+curl -o wininstall.bat https://raw.githubusercontent.com/look-another-one/reminder-to-look-at-you/refs/heads/main/wininstall.bat
+wininstall.bat
+```
 
-Developer Todos: 
+**Developer Todos**: 
 
 1. adding limit of a app for a day
 2. track the apps usage
