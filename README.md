@@ -22,7 +22,7 @@ This is Linux First but maybe after a stable release we work in windows and mac 
 > This Project is currently in beta state
 
 ---
-** LINUX INSTALLATION : **
+**LINUX INSTALLATION :**
 **Automatic Installation:**
 Run these commands seperately or combined for an automatic installation : 
 ```
