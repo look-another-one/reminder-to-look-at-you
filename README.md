@@ -51,3 +51,6 @@ wininstall.bat
 
 thoughts: 
 what about adding plugin system. 
+
+**Notes :**
+If the installation shows any error try running the debugger, in able to do so run the debug.py and make sure you have all the dependencies.
