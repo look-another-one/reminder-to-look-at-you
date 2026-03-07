@@ -16,14 +16,21 @@ Main Launaguage is going to be python.
 
 
 Scope: 
-This is Linux First but maybe after a stable release we work in windows and mac version.
+This is only for linux 
 
 > [!WARNING]
 > This Project is currently in beta state
 
 ---
 
-Developer Todos: 
 
-1. adding limit of a app for a day
-2. track the apps usage 
+# Running the Development Environment
+
+This project uses **Nix Flakes** to provide a ready-to-use Python development environment.
+
+## Start the Development Shell
+
+From the project directory, run:
+
+```bash
+nix develop
