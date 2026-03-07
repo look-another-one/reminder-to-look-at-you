@@ -33,4 +33,4 @@ This project uses **Nix Flakes** to provide a ready-to-use Python development en
 From the project directory, run:
 
 ```bash
-nix develop
+nix develop -c $SHELL
