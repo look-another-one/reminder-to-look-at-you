@@ -1,25 +1,27 @@
-Why We need a reminder?
+# Reminder to Look at You
 
-Working 8 hour straight on ass don't know what to do always forget you should drink water or reminder for tomorrow.
-Feel like Energy is dying on non-productive stuff.
-Forget Yesterday Thoughts/Todo
+The app tracks your screen time and provides intelligent suggestions tailored to your needs:
+- **Physical Wellness**: Uses your camera to remind you to blink and take breaks for eye health
+- **Task Management**: Monitors your to-do list and sends reminders when you get distracted from your tasks
+- **Smart Suggestions**: Offers advice on how to approach your todo items effectively 
 
-Goal: 
-1. Track Daily Screen Time
-2. Send Reminder Notificaion
-3. Todos
-4. Eye Blink Reminder (in future)
+## Key Features
 
+- **AI-Powered Reminders**: Uses artificial intelligence to provide personalized screen-time reminders
+- **Local Execution**: Runs completely on your machine—no internet connection needed
+- **Privacy-Focused**: 100% open-source with no cloud or server dependencies
 
-Languages: 
-Main Launaguage is going to be python.
+## Technology Stack
 
+- **Primary Language**: Python
 
-Scope: 
-This is only for linux 
+## Supported Platforms
+
+- Linux
+- Windows
 
 > [!WARNING]
-> This Project is currently in beta state
+> This project is currently under active development. Use at your own risk and manage expectations accordingly.
 
 ---
 
