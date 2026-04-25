@@ -1,7 +1,7 @@
 [project]
 name = "reminder-to-look-at-you"
 version = "0.1.0"
-description = "Add your description here"
+description = "YetAnother Productivity Tool"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
