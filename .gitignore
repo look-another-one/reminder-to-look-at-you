@@ -1,5 +1,6 @@
 /practices
 .venv
 .vscode
-log/
 todo.txt
+db/data.db
+__pycache__/
