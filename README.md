@@ -1,4 +1,4 @@
-# Reminder to Look at You 👁
+# Reminder to Look at You 
 
 > [!IMPORTANT]
 > **EARLY STAGE**: This project is currently in a very early stage of development. Features are being actively developed and may change.
