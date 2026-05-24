@@ -4,7 +4,4 @@ version = "0.1.0"
 description = "YetAnother Productivity Tool"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-    "fastapi[standard]>=0.136.1",
-    "uvicorn>=0.46.0",
-]
+dependencies = []
