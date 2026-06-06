@@ -4,17 +4,13 @@
 > **EARLY STAGE**: This project is currently in a very early stage of development. Features are being actively developed and may change.
 
 ## Overview
-A Script or a Program which track your sessions and help you figure out thing and help improving the Tech Life.
-
+Non Productive - This app reminds about break,eye care etc and Help you stay productive with AI
 
 ## Tech Stack
 - **Languages**: Python
 
 ## Offical Supported OS
 - Nixos 
-- Debain/Ubantu
-- Fedora 
-- Arch
 
-
-
+## Offical Winodow Managers 
+- Niri 
