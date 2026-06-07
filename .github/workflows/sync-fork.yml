@@ -1,35 +1,22 @@
 name: Sync Fork
-
 on:
   workflow_dispatch:
   push:
     branches: [main]
-
 jobs:
   sync-fork:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: source
-
-      - name: Clone fork, wipe files, add fresh ones
+      - name: Sync
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-
-          # Clone the fork
-          git clone https://x-access-token:${{ secrets.FORK_TOKEN }}@github.com/sarimgamerop-cloud/reminder-to-look-at-you-spfork.git fork
-          cd fork
-
-          # Delete everything except .git
-          find . -maxdepth 1 ! -name .git ! -name . -exec rm -rf {} +
-
-          # Copy all files from source (except .git)
-          cp -r ../source/. .
-          rm -rf .git  # remove the source's .git if copied
-
-          # Stage all new files, commit, push
+          git remote add fork https://x-access-token:${{ secrets.FORK_TOKEN }}@github.com/sarimgamerop-cloud/reminder-to-look-at-you-spfork.git
+          git fetch fork main
+          git checkout --orphan temp
+          git rm -rf .
+          git checkout main -- .
           git add -A
-          git commit -m "Fresh sync from source"
-          git push --force origin main
+          git commit -m "sync"
+          git push --force fork temp:main
