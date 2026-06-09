@@ -1,10 +1,5 @@
 import subprocess
 import sys
-from pathlib import Path
-
-root = Path(__file__).resolve().parent.parent.parent
-
-icon = root / "assets" / "alert.png"
 
 def send_gdbus_notification(title, message, icon, timeout):
     """
