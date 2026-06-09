@@ -3,6 +3,9 @@ import os
 import json
 
 def track_window():
+    '''
+    Connect to NIRI_SOCKET and get live EventStream Ouput
+    '''
     sock = os.environ["NIRI_SOCKET"]
     with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as s:
         s.connect(sock)
