@@ -22,7 +22,7 @@ def send_gdbus_notification(title, message, icon, timeout):
         str(timeout)
     ]
     try:
-        result = subprocess.run(
+        subprocess.run(
             command,
             check=True,
             stdout=subprocess.PIPE,
@@ -36,3 +36,4 @@ def send_gdbus_notification(title, message, icon, timeout):
     except subprocess.CalledProcessError as e:
         print(f"GDBus call failed: {e.stderr.strip()}", file=sys.stderr)
         return False
+send_gdbus_notification("tite","message",None,2)
