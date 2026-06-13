@@ -1,39 +1,22 @@
 import subprocess
 import sys
 
-def send_gdbus_notification(title, message, icon, timeout):
+def send_notification(title:str, message:str, icon:PATH, timeout:str) -> None:
     """
-    Sends a desktop notification using the standard library by breaking 
-    out the parameters into distinct command line array elements.
+    Sends a desktop notification using the libnotify lib 
     """
     command = [
-        "gdbus", "call",
-        "--session",
-        "--dest", "org.freedesktop.Notifications",
-        "--object-path", "/org/freedesktop/Notifications",
-        "--method", "org.freedesktop.Notifications.Notify",
-        "PythonApp",              
-        "0",                      
-        str(icon),                    
-        title,                    
-        message,                     
-        "[]",                     
-        "{}",                     
-        str(timeout)
+            "notify-send",
+            title,
+            message,
+            "-i", 
+            icon,
+            "-t",
+            timeout
     ]
     try:
         subprocess.run(
-            command,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
+            command
         )
-        return True
     except FileNotFoundError:
-        print("Error: The 'gdbus' utility is missing from this OS.", file=sys.stderr)
-        return False
-    except subprocess.CalledProcessError as e:
-        print(f"GDBus call failed: {e.stderr.strip()}", file=sys.stderr)
-        return False
-send_gdbus_notification("tite","message",None,2)
+        print("Error: The 'libnotify' lib is missing from this OS.", file=sys.stderr)
