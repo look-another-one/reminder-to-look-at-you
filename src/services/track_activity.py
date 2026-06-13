@@ -16,11 +16,11 @@ def track_window():
             output = json.loads(line.strip())
             if "WindowFocusChanged" in output.keys():
                 print(f"Focused Changed to {output["WindowFocusChanged"]["id"]}")
-            if "WindowOpenedOrChanged" in output.keys():
+            elif "WindowOpenedOrChanged" in output.keys():
                 print(f"Window Opened, Title: {output["WindowOpenedOrChanged"]["window"]["title"]}")
                 print(f"Window Opened, ID: {output["WindowOpenedOrChanged"]["window"]["id"]}")
                 print(f"Window Opened, APP_ID: {output["WindowOpenedOrChanged"]["window"]["app_id"]}")
-            if "WindowClosed" in output.keys():
+            elif "WindowClosed" in output.keys():
                 print(f"WIndow Closed ID: {output["WindowClosed"]["id"]}")
             else:
                 pass
