@@ -1,6 +1,6 @@
 import subprocess
 
-def send_notification(title:str, message:str, icon:PATH, timeout:str) -> None:
+def send_notification(title:str, message:str, icon:PATH) -> None:
     """
     Sends a desktop notification using the libnotify lib 
     """
@@ -9,9 +9,7 @@ def send_notification(title:str, message:str, icon:PATH, timeout:str) -> None:
             title,
             message,
             "-i", 
-            icon,
-            "-t",
-            timeout
+            icon
     ]
     try:
         subprocess.run(
