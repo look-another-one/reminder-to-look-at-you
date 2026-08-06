@@ -1,6 +1,9 @@
 import socket
 import os 
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 class TrackScreenTime:
     def __init__(self):
@@ -9,11 +12,20 @@ class TrackScreenTime:
         self.check_window_manager()
 
     def check_window_manager(self):
+        '''
+        Check window manager if not get raise a valueerror
+        '''
         if not os.getenv("NIRI_SOCKET"):
+            logger.error("no NIRI_SOCKET env found")
             raise ValueError("niri socket not found")
+        logger.info("window manager checked passed")
     
     def connect_to_window_manager(self):
+        '''
+        Connect with window manager and stream niri ipc output
+        '''
         sock_path = os.environ["NIRI_SOCKET"]
+        logger.info("connecting to window manager")
         with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
             s.connect(sock_path)
             request = (json.dumps("EventStream") + "\n").encode()
@@ -35,6 +47,8 @@ class TrackScreenTime:
         app_id = window_info.get("app_id")
         window_id = window_info.get("id")
         
+        logger.debug(f"window opened {app_id},{window_id}")
+        
         if not app_id or not window_id:
             return
 
@@ -45,10 +59,12 @@ class TrackScreenTime:
     
     def window_focus_changed(self, event_data):
         window_id = event_data.get("id")
+        logger.debug(f"window opened {window_id}")
         self.focused_window = window_id
 
     def window_closed(self, event_data):
         window_id = event_data.get("id")
+        logger.debug(f"window closed {window_id}",)
         if not window_id:
             return
 
@@ -63,8 +79,3 @@ class TrackScreenTime:
         
         if self.focused_window == window_id:
             self.focused_window = None
-            
-
-if __name__ == "__main__":
-    start = TrackScreenTime()
-    start.connect_to_window_manager()
